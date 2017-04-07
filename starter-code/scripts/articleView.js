@@ -108,9 +108,15 @@ articleView.create = function() {
     }
 
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
- var article = new Articel(newArticle)
 
+// this code accompilishes same goal as 2 lines below
+
+// var template = Hanldebars.complile($('#article-template')).html());
+// var new ArticleHtml = template(newArticle);
+
+var article = new Article(newArticle)
 $('#articles').prepend(article.toHtml());
+
 var newArticleHtml = Handlebars.compile($('#article-template').html())(newArticle);
 $('#articles').prepend(newArticleHtml);
 
